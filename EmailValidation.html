@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation</title>
+    <script>
+        function validation()
+        {
+            var data = document.getElementById("emails").value;
+            var regx = /^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+).([a-z]{2,9})$/;
+
+            if(regx.test(data))
+            {
+                document.getElementById("condition").innerHTML="Valid";
+                document.getElementById("condition").style.color="Green";
+                document.getElementById("condition").style.visibility="visible";
+
+            }else{
+                document.getElementById("condition").innerHTML="Invalid";
+                document.getElementById("condition").style.color="Red";
+                document.getElementById("condition").style.visibility="visible";
+            }
+        }
+    </script>
+</head>
+<body>
+<form autocomplete="off ">
+    <input name="email" type="text" id="emails" placeholder="Email validation">
+    <lable id="condition"></lable><br><br>
+
+    <button type="button" onclick="validation()">Click Me</button>
+</form>
+</body>
+</html>
